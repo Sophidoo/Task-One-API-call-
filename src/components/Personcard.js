@@ -1,4 +1,4 @@
-import Style from "../styles/personcard.module.css"
+// import Style from "../styles/personcard.module.css"
 
 const Personcard = () => {
 

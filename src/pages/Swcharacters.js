@@ -1,5 +1,4 @@
-import Personcard from "../components/Personcard"
-import Navbar from "../components/Navbar"
+// import Personcard from "../components/Personcard"
 import Style from "../styles/swcharacters.module.css"
 import { BiSearchAlt } from "react-icons/bi"
 import { useState } from "react"
