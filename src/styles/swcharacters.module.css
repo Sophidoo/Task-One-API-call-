@@ -1,0 +1,242 @@
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    padding: 80px 150px;
+    align-items: center;
+}
+.heading{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0px;
+}
+.heading h1{
+    font-size: 40px;
+}
+
+.heading p{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(72, 72, 72);
+}
+.heading form{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.heading input{
+    padding: 10px 15px;
+    width: 400px;
+    border: 1px solid rgb(162, 162, 162);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+}
+.heading svg{
+    padding: 10px 15px;
+    padding-left: 10px;
+    border: 1px solid rgb(162, 162, 162);
+    border-left: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: whitesmoke;
+    color: rgb(54, 54, 54);
+}
+
+.charWrap{
+    display: flex;
+    column-gap: 3%;
+    row-gap: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.charWrap .card{
+    width: 22.75%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.charWrap .card h3:hover{
+    cursor: pointer;
+}
+.charWrap .card img{
+    height: 250px;
+    background-color: gray;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid rgb(225, 225, 225);
+}
+
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+}
+
+.hide{
+    display: none;
+}
+
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.522);
+    backdrop-filter: blur(2px);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    display: grid;
+    place-items: center;
+}
+.modalCard{
+    background-color: white;
+    padding: 30px 20px;
+    padding-top: 40px;
+    width: 400px;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.modalCard img{
+    width: 100%;
+    border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
+}
+.modalCard .close{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-weight: 500;
+}
+.modalCard .close:hover{
+    color: red;
+    cursor: pointer;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+.details h3{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.details p{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(64, 64, 64);
+}
+.details p span{
+    font-weight: 600;
+    color: black;
+}
+
+
+@media(max-width: 1300px){
+    .wrapper{
+        padding: 80px 80px;
+    }
+}
+@media(max-width: 1000px){
+    .wrapper{
+        padding: 80px 50px;
+    }
+}
+@media(max-width: 900px){
+    .charWrap .card{
+        width: 31.3%;
+    }
+}
+@media(max-width: 750px){
+    .wrapper{
+        padding: 80px 30px;
+    }
+    .heading h1{
+        font-size: 35px;
+    }
+}
+@media(max-width: 628px){
+    .charWrap .card{
+        width: 48.5%;
+    }
+}
+@media(max-width: 500px){
+    .wrapper{
+        row-gap: 80px;
+    }
+    .heading h1{
+        font-size: 32px;
+    }
+    .heading p{
+        font-size: 14px;
+    }
+    .heading input{
+        width: 300px;
+        padding: 8px 15px;
+    }
+    .heading svg{
+        padding: 8px 15px;
+        padding-left: 10px;
+    }
+    .modalCard{
+        width: 70%;
+    }
+    .modalCard h3{
+        font-size: 20px;
+    }
+}
+@media(max-width: 450px){
+    .wrapper{
+        row-gap: 60px;
+    }
+    .charWrap .card{
+        width: 100%;
+    }
+    .heading h1{
+        font-size: 28px;
+    }
+    .heading p{
+        font-size: 14px;
+    }
+    .charWrap .card img{
+        height: 220px;
+    }
+    .charWrap .card h3{
+        font-size: 18px;
+    }
+    .heading input{
+        width: 250px;
+    }
+    .wrapper{
+        padding: 60px 20px;
+    }
+    footer{
+        padding: 20px;
+        font-size: 14px;
+    }
+    .modalCard{
+        width: 95%;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 0px;
+    }
+}
+@media(max-width: 350px){
+    .heading input{
+        width: 100%;
+    }
+    .heading h1{
+        font-size: 25px;
+    }
+}
