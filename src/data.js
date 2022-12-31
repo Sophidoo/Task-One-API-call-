@@ -11,8 +11,6 @@ const images = [
     'https://img.freepik.com/free-photo/serious-looking-male-handsome-guy-with-blond-hair-wearing-grey-hoodie-people-emotion-concept-watching-confident-isolated-grey-wall_295783-13901.jpg?w=2000',
     'https://fixthephoto.com/blog/images/uikit_slider/male-photo-edited-by-fixthephoto-service_1649799173.jpg',
     'https://star-name-registry.com/blog/user/pages/01.item/top-20-stars-wars-characters/name_a_star01-jar-jar.jpg'
-
-
 ]
 
 export {images}
