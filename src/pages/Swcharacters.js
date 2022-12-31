@@ -1,7 +1,7 @@
-// import Personcard from "../components/Personcard"
 import Style from "../styles/swcharacters.module.css"
 import { BiSearchAlt } from "react-icons/bi"
 import { useEffect, useState } from "react"
+import { images } from '../data'
 
 const Swcharacters = () => {
 
@@ -18,8 +18,9 @@ const Swcharacters = () => {
 
     const [showModal, setShowModal] = useState(false)
     const [charData, setCharData] = useState([])
-
     const [charIndex, setIndex] = useState()
+
+
 
 
     const modal = (index) => {
@@ -29,8 +30,6 @@ const Swcharacters = () => {
     }
 
     return <>
-        {/* <Navbar/
-        > */}
 
         <div className={Style.wrapper}>
             <div className={Style.heading}>
@@ -43,24 +42,23 @@ const Swcharacters = () => {
             </div>
 
             <section className={Style.charWrap}>
-            {
-                charData.length === 0 && 
-                <p>Loading...</p>
-            }
-            {
-                charData.length > 0 &&
-                charData.map((data, index) => {
-                    return(
+                {
+                    charData.length === 0 && 
+                    <p>Loading...</p>
+                }
+                {
+                    charData.length > 0 &&
+                    charData.map((data, index) => {
+                        return(
 
-                        <div className={Style.card} key = {index}>
+                            <div className={Style.card} key = {index}>
 
-                            <img src="https://thumbs.dreamstime.com/b/close-up-smiling-young-black-female-fashion-model-portrait-84681420.jpg" alt="" />
-                            <h3 onClick={() => modal(index)}>{data.name}</h3>
-                        </div>
-                    
-                )})
-            }
-                
+                                <img src={images[index]} alt="" />
+                                <h3 onClick={() => modal(index)}>{data.name}</h3>
+                            </div>
+                        
+                    )})
+                }
             </section>
         </div>
 
