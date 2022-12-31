@@ -73,7 +73,7 @@ const Swcharacters = () => {
                 <div className={showModal? Style.modal : Style.hide}>
                     <div className={Style.modalCard}>
                         <p className={Style.close} onClick = {() => setShowModal(false)}>x</p>
-                        <img src="https://thumbs.dreamstime.com/b/close-up-smiling-young-black-female-fashion-model-portrait-84681420.jpg" alt="" />
+                        <img src={images[charIndex]} alt="" />
                         <div className={Style.details} key = {index}>
                             <h3>{data.name}</h3>
                             <p><span>Height: </span>{data.height}</p>
