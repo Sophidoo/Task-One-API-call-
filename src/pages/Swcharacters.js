@@ -1,6 +1,7 @@
 import Style from "../styles/swcharacters.module.css"
 import { useEffect, useState } from "react"
 import { images } from '../data'
+import {TbLoaderQuarter} from "react-icons/tb"
 
 
 const Swcharacters = () => {
@@ -8,10 +9,9 @@ const Swcharacters = () => {
     const [status, setStatus] = useState()
     const [itemsNum, setItemsNum] = useState()
     const pageNum = []
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState()
     const [charData, setCharData] = useState([])
     const [charIndex, setIndex] = useState()
-
     
     for (let i = 1; i <= Math.ceil(itemsNum/10); i++) {
         pageNum.push([i])
@@ -30,7 +30,6 @@ const Swcharacters = () => {
             console.log(data)
         })
         .catch((err) => {console.log(err.message)})
-
 
     }, [page])
 
@@ -54,10 +53,15 @@ const Swcharacters = () => {
             <section className={Style.charWrap}>
                 {
                     !status && 
-                    <p>Loading...</p>
+                    <div className={Style.loader}>
+                    <div className={Style.loadWrap}>
+                        <TbLoaderQuarter/>
+                        <h2>Loading...</h2>
+                    </div>
+                    </div>
                 }
                 {
-                    status &&
+                    status && 
                     charData.map((data, index) => {
                         return(
 
