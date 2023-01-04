@@ -2,6 +2,9 @@ import Style from "../styles/swcharacters.module.css"
 import { useEffect, useState } from "react"
 import { images } from '../data'
 import {TbLoaderQuarter} from "react-icons/tb"
+import {TbWifiOff} from "react-icons/tb"
+import Header from "../components/Header."
+import Footer from "../components/Footer"
 
 
 const Swcharacters = () => {
@@ -12,6 +15,7 @@ const Swcharacters = () => {
     const [showModal, setShowModal] = useState()
     const [charData, setCharData] = useState([])
     const [charIndex, setIndex] = useState()
+    const [error, setError] = useState()
     
     for (let i = 1; i <= Math.ceil(itemsNum/10); i++) {
         pageNum.push([i])
@@ -29,7 +33,10 @@ const Swcharacters = () => {
             setStatus(true)
             console.log(data)
         })
-        .catch((err) => {console.log(err.message)})
+        .catch((err) => {
+            setError(true)
+            console.log(err.message)
+        })
 
     }, [page])
 
@@ -43,20 +50,26 @@ const Swcharacters = () => {
     return <>
 
         <div className={Style.wrapper}>
-            <div className={Style.heading}>
-                <h1>Star Wars Characters</h1>
-                <p>A Single Page Application showing all the characters from star wars Api</p>
-            </div>
+            <Header/>
 
             
 
             <section className={Style.charWrap}>
                 {
-                    !status && 
+                    !status && !error &&
                     <div className={Style.loader}>
                     <div className={Style.loadWrap}>
                         <TbLoaderQuarter/>
                         <h2>Loading...</h2>
+                    </div>
+                    </div>
+                }
+                {
+                    !status && error &&
+                    <div className={Style.error}>
+                    <div className={Style.errorwrap}>
+                        <TbWifiOff/>
+                        <h2>No Wifi</h2>
                     </div>
                     </div>
                 }
@@ -92,9 +105,7 @@ const Swcharacters = () => {
         </section>
 
 
-        <footer>
-            <p>Made With Love❤️. Sophia</p>
-        </footer>
+        <Footer/>
 
         {
             charData.length > 0 && 

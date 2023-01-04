@@ -8,70 +8,35 @@
     padding-bottom: 30px;
     align-items: center;
 }
-.heading{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 0px;
-}
-.heading h1{
-    font-size: 40px;
-}
-
-.heading p{
-    font-size: 15px;
-    font-weight: 500;
-    color: rgb(72, 72, 72);
-}
-.heading form{
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-}
-.heading input{
-    padding: 10px 15px;
-    width: 400px;
-    border: 1px solid rgb(162, 162, 162);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    outline: none;
-}
-.heading svg{
-    padding: 10px 15px;
-    padding-left: 10px;
-    border: 1px solid rgb(162, 162, 162);
-    border-left: 0px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: whitesmoke;
-    color: rgb(54, 54, 54);
-}
 
 .charWrap{
     display: flex;
-    column-gap: 3%;
-    row-gap: 30px;
+    column-gap: 4%;
+    row-gap: 35px;
     width: 100%;
     flex-wrap: wrap;
 }
 .charWrap .card{
-    width: 22.75%;
+    width: 22%;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+}
+.charWrap .card h3{
+    font-size: 22px;
+    font-weight: 800;
 }
 .charWrap .card h3:hover{
     cursor: pointer;
 }
 .charWrap .card img{
     height: 250px;
-    background-color: gray;
+    background-color: white;
     width: 100%;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: contain;
     border: 1px solid rgb(225, 225, 225);
-    object-position: top;
+    object-position: center;
 }
 .pagination{
     padding: 20px 20px;
@@ -106,14 +71,7 @@
     margin: 3px 3px;
     font-size: 14.5px;
 }
-footer{
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 30px;
-}
+
 
 .hide{
     display: none;
@@ -145,7 +103,7 @@ footer{
     width: 100%;
     border-radius: 5px;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top;
     border: 1px solid rgb(225, 225, 225);
 }
@@ -191,6 +149,23 @@ footer{
 
     row-gap: 3px;
 }
+.error{
+    width: 100%;
+    height: 70vh;
+    margin-top: -120px;
+    display: grid;
+    place-items: center;
+}
+.errorwrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    row-gap: 3px;
+}
+.errorwrap svg{
+    font-size: 40px;
+}
 .loadWrap svg{
     font-size: 40px;
     animation-name: loader;
@@ -219,7 +194,7 @@ footer{
 }
 @media(max-width: 900px){
     .charWrap .card{
-        width: 31.3%;
+        width: 30.65%;
     }
 }
 @media(max-width: 750px){
@@ -232,26 +207,12 @@ footer{
 }
 @media(max-width: 628px){
     .charWrap .card{
-        width: 48.5%;
+        width: 48%;
     }
 }
 @media(max-width: 500px){
     .wrapper{
         row-gap: 80px;
-    }
-    .heading h1{
-        font-size: 32px;
-    }
-    .heading p{
-        font-size: 14px;
-    }
-    .heading input{
-        width: 300px;
-        padding: 8px 15px;
-    }
-    .heading svg{
-        padding: 8px 15px;
-        padding-left: 10px;
     }
     .modalCard{
         width: 70%;
@@ -267,20 +228,14 @@ footer{
     .charWrap .card{
         width: 100%;
     }
-    .heading h1{
-        font-size: 28px;
-    }
-    .heading p{
-        font-size: 14px;
+    .charWrap .card img{
+        object-position: top;
     }
     .charWrap .card img{
         height: 220px;
     }
     .charWrap .card h3{
         font-size: 18px;
-    }
-    .heading input{
-        width: 250px;
     }
     .wrapper{
         padding: 60px 20px;
@@ -292,9 +247,12 @@ footer{
     .loader h2{
         font-size: 18px;
     }
-    footer{
-        padding: 20px;
-        font-size: 14px;
+    .error svg{
+        font-size: 30px;
+    }
+
+    .error h2{
+        font-size: 18px;
     }
     .modalCard{
         width: 95%;
@@ -310,12 +268,7 @@ footer{
     }
 }
 @media(max-width: 350px){
-    .heading input{
-        width: 100%;
-    }
-    .heading h1{
-        font-size: 25px;
-    }
+    
     .paginationWrap{
         column-gap: 0px;
     }
