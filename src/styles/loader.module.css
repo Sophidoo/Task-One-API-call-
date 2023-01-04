@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 .loaderWrapper .loader{
-    width: 21.8%;
+    width: 21.7%;
     display: grid;
     place-items: center;
     row-gap: 5px;
@@ -30,5 +30,20 @@
     }
     to{
         transform: rotate(360deg);
+    }
+}
+@media(max-width: 900px){
+    .loaderWrapper .loader{
+        width: 30.3%;
+    }
+}
+@media(max-width: 628px){
+    .loaderWrapper .loader{
+        width: 47.5%;
+    }
+}
+@media(max-width: 450px){
+    .loaderWrapper .loader{
+        width: 100%;
     }
 }
