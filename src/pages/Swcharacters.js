@@ -1,10 +1,10 @@
 import Style from "../styles/swcharacters.module.css"
 import { useEffect, useState } from "react"
 import { images } from '../data'
-import {TbLoaderQuarter} from "react-icons/tb"
 import {TbWifiOff} from "react-icons/tb"
 import Header from "../components/Header."
 import Footer from "../components/Footer"
+import Loader from "../components/Loader"
 
 
 const Swcharacters = () => {
@@ -44,7 +44,7 @@ const Swcharacters = () => {
         setShowModal(true)
         setIndex(index)
     }
-
+console.log(pageNum);
 
 
     return <>
@@ -57,19 +57,15 @@ const Swcharacters = () => {
             <section className={Style.charWrap}>
                 {
                     !status && !error &&
-                    <div className={Style.loader}>
-                    <div className={Style.loadWrap}>
-                        <TbLoaderQuarter/>
-                        <h2>Loading...</h2>
-                    </div>
-                    </div>
+                    <Loader/>
                 }
+                    
                 {
                     !status && error &&
                     <div className={Style.error}>
                     <div className={Style.errorwrap}>
                         <TbWifiOff/>
-                        <h2>No Wifi</h2>
+                        <h2>No Internet Connection...</h2>
                     </div>
                     </div>
                 }
@@ -90,7 +86,7 @@ const Swcharacters = () => {
         </div>
 
 
-        <section className={status ? Style.pagination : Style.hide}>
+        <section className={status ? Style.pagination : Style.hide} onClick = {() => setStatus(false)}>
             <div className={Style.paginationWrap}>
                 <h4 onClick={() => setPage(page <= 1 ? 1 : page - 1)} className = {page === 1 && Style.disabled}>prev</h4>
                 {
