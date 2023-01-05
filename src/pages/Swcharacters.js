@@ -31,7 +31,7 @@ const Swcharacters = () => {
             setCharData(data.results)
             setItemsNum(data.count)
             setStatus(true)
-            console.log(data)
+            console.log(data.results)
         })
         .catch((err) => {
             setError(true)
@@ -44,7 +44,6 @@ const Swcharacters = () => {
         setShowModal(true)
         setIndex(index)
     }
-console.log(pageNum);
 
 
     return <>
@@ -88,7 +87,7 @@ console.log(pageNum);
 
         <section className={status ? Style.pagination : Style.hide} onClick = {() => setStatus(false)}>
             <div className={Style.paginationWrap}>
-                <h4 onClick={() => setPage(page <= 1 ? 1 : page - 1)} className = {page === 1 && Style.disabled}>prev</h4>
+                <h4 onClick={() => setPage(page < 2 ? 1 : page - 1)} className = {page === parseInt(1) ? Style.hide : undefined}>prev</h4>
                 {
                     status && pageNum.map((data) => {
                         return(
@@ -96,7 +95,7 @@ console.log(pageNum);
                         )
                     })
                 }
-                <h4 onClick={() => setPage(page >= 9 ? 9 : page + 1)} className = {page === 9 && Style.disabled}>next</h4>
+                <h4 onClick={() => setPage(page > 8 ? 9 : page + 1)} className = {page === 9 ? Style.hide : undefined}>next</h4>
             </div>
         </section>
 
